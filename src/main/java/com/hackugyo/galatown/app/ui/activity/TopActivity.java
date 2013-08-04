@@ -14,8 +14,8 @@ import com.hackugyo.galatown.app.R;
 import com.hackugyo.galatown.app.adapter.ViewPagerAdapter;
 
 public class TopActivity
-    extends SherlockFragmentActivity
-    implements OnPageChangeListener, OnNavigationListener
+        extends SherlockFragmentActivity
+        implements OnPageChangeListener, OnNavigationListener
 {
 
     private String[] locations;
@@ -37,6 +37,11 @@ public class TopActivity
         pager.setOnPageChangeListener(this);
     }
 
+    /**
+     * {@link OnPageChangeListener#onPageSelected(int)} method.
+     * @param position
+     */
+    @Override
     public void onPageSelected(int position) {
         getSupportActionBar().setSelectedNavigationItem(position);
     }
@@ -59,7 +64,9 @@ public class TopActivity
         getSupportMenuInflater();
         return true;
     }
+
     @Override
-public void onPageScrollStateChanged(int position) {}@Override
- public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+    public void onPageScrollStateChanged(int position) {}
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
 }

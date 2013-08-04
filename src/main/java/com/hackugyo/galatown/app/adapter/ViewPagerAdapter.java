@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import com.hackugyo.galatown.app.ui.fragment.SampleFragment;
+import com.hackugyo.galatown.app.ui.fragment.TopFragment;
 
 public class ViewPagerAdapter
     extends FragmentPagerAdapter
@@ -23,10 +24,20 @@ public class ViewPagerAdapter
     }
 
     public Fragment getItem(int position) {
-        Fragment fragment = new SampleFragment();
+        Fragment fragment;
         Bundle bundle = new Bundle();
-        bundle.putString("label", locations[position]);
-        fragment.setArguments(bundle);
+        switch (position) {
+            case 0:
+                fragment = new TopFragment();
+                bundle.putString("label", locations[position]);
+                fragment.setArguments(bundle);
+                break;
+            default:
+                fragment = new SampleFragment();
+                bundle.putString("label", locations[position]);
+                fragment.setArguments(bundle);
+                break;
+        }
         return fragment;
     }
 

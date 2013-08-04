@@ -21,6 +21,8 @@
 
 		<!-- Dependencies -->
 		<actionBarSherlock.version>4.3.1</actionBarSherlock.version>
+        <jacksonCore.version>1.9.13</jacksonCore.version>
+        <jacksonMapper.version>1.9.13</jacksonMapper.version>
 		<android.version>4.1.1.4</android.version>
 		<spring-android-rest-template.version>1.0.1.RELEASE</spring-android-rest-template.version>
 	</properties>
@@ -50,7 +52,36 @@
 			<artifactId>spring-android-rest-template</artifactId>
 			<version>${spring-android-rest-template.version}</version>
 		</dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>${jacksonCore.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>${jacksonMapper.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.twitter4j</groupId>
+            <artifactId>twitter4j-core</artifactId>
+            <version>[3.0,)</version>
+        </dependency>
 	</dependencies>
+
+    <repositories>
+        <repository>
+            <id>twitter4j.org</id>
+            <name>twitter4j.org Repository</name>
+            <url>http://twitter4j.org/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 	<build>
 		<plugins>
